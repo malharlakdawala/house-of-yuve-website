@@ -275,6 +275,7 @@ footer nav a:hover{color:var(--on-forest)}
 .flow{--error:oklch(48% .16 30);font-size:19px;line-height:1.5;max-width:520px;margin:0 auto}
 .flow h2{font-size:1.85rem}
 .flow .ftop{display:flex;justify-content:flex-end;margin-bottom:6px}
+.flow .notice{margin:4px 0 14px;padding:12px 16px;border-left:3px solid var(--gold);background:var(--sand);font-size:1rem;line-height:1.45;color:var(--ink)}
 .flow .lang{display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden}
 .flow .lang button{border:0;background:transparent;font:500 1rem var(--body);padding:8px 14px;min-height:44px;cursor:pointer;color:var(--ink)}
 .flow .lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
@@ -591,18 +592,6 @@ footer nav a:hover{color:var(--gold)}
 }
 @media (min-width:1280px){.wrap{max-width:1200px}}
 
-/* ===== Hero: editorial crop on the jewellery, film grain, never upscaled ===== */
-.hero2{background:#151513}
-.hero2-img{filter:saturate(.82) contrast(.94) brightness(1.02) sepia(.06);object-position:center 100%;height:auto;aspect-ratio:1.28;max-height:none}
-.hero2-over{position:static;background:#151513;padding:28px 20px 36px}
-.hero2::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.22;mix-blend-mode:overlay;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E")}
-.hero2-over{z-index:1}
-@media (min-width:900px){
-  .hero2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,640px);align-items:stretch}
-  .hero2-img{grid-column:2;grid-row:1;width:100%;height:100%;aspect-ratio:1.28}
-  .hero2-over{grid-column:1;grid-row:1;position:static;align-content:center;justify-items:start;text-align:left;padding:48px clamp(32px,6vw,96px);background:none}
-  .hero2-over h1{font-size:clamp(2.6rem,4.4vw,3.8rem)}
-}
 </style>
 </head>
 <body>
@@ -779,6 +768,7 @@ footer nav a:hover{color:var(--gold)}
           <button type="button" data-lang="en" aria-pressed="true">English</button>
           <button type="button" data-lang="hi" aria-pressed="false">हिंदी</button>
         </div></div>
+        <p class="notice" role="note" data-t="notLive"></p>
 <!-- 1 · What is your jewellery worth + upload -->
   <section class="fscreen" data-s="1">
     <h1 data-t="h1"></h1>
@@ -1351,7 +1341,8 @@ footer nav a:hover{color:var(--gold)}
       phLbl:'Your mobile number', phErr:'Please enter a 10-digit mobile number.',
       pay:'Pay ₹500 and unlock', payNote:'Pay by UPI. ₹500 is adjusted if you make any design with us.',
       paid:'Unlocked. Your 5 designs are saved to your number. Our designer will call you.',
-      call:'Prefer to talk? Call or WhatsApp', again:'Check another piece', foot:''
+      call:'Prefer to talk? Call or WhatsApp', again:'Check another piece', foot:'',
+      notLive:'<b>Preview only.</b> Online valuation is not live yet. Photos are not uploaded and no payment is taken.'
     },
     hi:{
       h1:'आपके गहने की <em>कीमत क्या है?</em>', sub:'एक फ़ोटो डालिए। मुफ़्त, और बेचना ज़रूरी नहीं।',
@@ -1371,7 +1362,8 @@ footer nav a:hover{color:var(--gold)}
       phLbl:'आपका मोबाइल नंबर', phErr:'कृपया 10 अंकों का मोबाइल नंबर डालें।',
       pay:'₹500 देकर खोलें', payNote:'UPI से भुगतान। कोई भी डिज़ाइन बनवाने पर ₹500 एडजस्ट होंगे।',
       paid:'खुल गए। आपके 5 डिज़ाइन आपके नंबर पर सेव हैं। हमारे डिज़ाइनर कॉल करेंगे।',
-      call:'बात करना चाहें? कॉल या WhatsApp करें', again:'दूसरा गहना देखें', foot:''
+      call:'बात करना चाहें? कॉल या WhatsApp करें', again:'दूसरा गहना देखें', foot:'',
+      notLive:'<b>केवल झलक।</b> ऑनलाइन वैल्यूएशन अभी शुरू नहीं हुआ है। फ़ोटो अपलोड नहीं होती और कोई भुगतान नहीं लिया जाता।'
     }
   };
   const RATE={22:13710,18:11218,14:Math.round(14957*.585/.999)};
