@@ -9,10 +9,10 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231A1A1A'/%3E%3Cpath d='M16 5l9 9-9 13-9-13z' fill='none' stroke='%23B08D57' stroke-width='2'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Jost:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Marcellus&family=Jost:wght@400;500;600;700&display=swap">
 <style>
 /* House of Yuve: white ground, black actions, oxblood bands, antique-gold detailing.
-   Bodoni Moda headings set upright, Jost body, crisp square corners. Single light theme. */
+   Marcellus headings, Jost body, crisp square corners. Single light theme. */
 :root{
   color-scheme:light;
   --bg:#FFFFFF; --card:#FFFFFF; --sand:#F4F1EC; --sand-2:#FAF8F5;
@@ -22,7 +22,7 @@
   --forest:#3B1320; --ruby:#1A1A1A; --on-ruby:#FFFFFF; --on-forest:#F5EDE3; --forest-2:#55212F;
   --good:#2F6B45; --warn:#A6402A;
   --radius:2px;
-  --display:"Bodoni Moda",Didot,"Bodoni 72",Georgia,serif;
+  --display:"Marcellus","Trajan Pro",Georgia,serif;
   --body:"Jost","Helvetica Neue",Arial,sans-serif;
 }
 *{box-sizing:border-box}
@@ -529,8 +529,10 @@ footer nav a{font-family:var(--display);font-size:1.15rem;padding-block:10px;bor
 .flow h1,.flow h2{font-family:var(--display);font-weight:500}
 .flow h1{font-size:2.7rem} .flow h2{font-size:2.15rem}
 
-/* ===== Brand layer: upright Bodoni, square corners, oxblood bands ===== */
-h1,h2,h3{font-weight:400;letter-spacing:-.01em;line-height:1.1}
+/* ===== Brand layer: Marcellus headings, square corners, oxblood bands ===== */
+h1,h2,h3,.offer b,.look b,.strip b,.steps b,.trio h3,.card h3,.logo .yv,.logo .ho,.flow h1,.flow h2{font-weight:400!important}
+h1,h2,h3{letter-spacing:0;line-height:1.15}
+.intro-lead{font-size:clamp(1.15rem,4vw,1.4rem);line-height:1.55}
 h1{font-size:clamp(2.2rem,8vw,4rem)} h2{font-size:clamp(1.8rem,6vw,2.9rem)} h3{font-size:1.35rem;font-weight:500}
 .flow h1{font-size:2.3rem} .flow h2{font-size:1.85rem}
 h1 em,h2 em,h3 em,.hero h1 em,.hero2-over h1 em,.banner-over h2 em{font-style:normal;color:inherit!important}
@@ -588,6 +590,19 @@ footer nav a:hover{color:var(--gold)}
   th{font-size:.62rem;letter-spacing:.08em}
 }
 @media (min-width:1280px){.wrap{max-width:1200px}}
+
+/* ===== Hero: editorial crop on the jewellery, film grain, never upscaled ===== */
+.hero2{background:#151513}
+.hero2-img{filter:saturate(.82) contrast(.94) brightness(1.02) sepia(.06);object-position:center 100%;height:auto;aspect-ratio:1.28;max-height:none}
+.hero2-over{position:static;background:#151513;padding:28px 20px 36px}
+.hero2::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.22;mix-blend-mode:overlay;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E")}
+.hero2-over{z-index:1}
+@media (min-width:900px){
+  .hero2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,640px);align-items:stretch}
+  .hero2-img{grid-column:2;grid-row:1;width:100%;height:100%;aspect-ratio:1.28}
+  .hero2-over{grid-column:1;grid-row:1;position:static;align-content:center;justify-items:start;text-align:left;padding:48px clamp(32px,6vw,96px);background:none}
+  .hero2-over h1{font-size:clamp(2.6rem,4.4vw,3.8rem)}
+}
 </style>
 </head>
 <body>
@@ -596,12 +611,12 @@ footer nav a:hover{color:var(--gold)}
 <div class="ticker" aria-label="Indicative metal rates">
   <div class="wrap">
     <span id="tkWhen">Today · India</span>
-    <span>Gold 24K <b data-rate="g24">₹14,957/g</b></span>
-    <span>22K <b data-rate="g22">₹13,710/g</b></span>
-    <span>18K <b data-rate="g18">₹11,218/g</b></span>
+    <span>Gold 24K <b data-rate="g24" data-per="10">₹1,49,980/10g</b></span>
+    <span>22K <b data-rate="g22" data-per="10">₹1,37,380/10g</b></span>
+    <span>18K <b data-rate="g18" data-per="10">₹1,12,480/10g</b></span>
     <span>Silver 999 <b data-rate="s999kg">₹2,50,900/kg</b></span>
     <span>Platinum <b data-rate="p999">₹5,163/g</b></span>
-    <span>Indicative, excl. GST</span>
+    <span>Mumbai · incl. 15% duty &amp; 3% GST</span>
   </div>
 </div>
 
@@ -612,7 +627,7 @@ footer nav a:hover{color:var(--gold)}
     <a class="hcall" href="#value" aria-label="Value my jewellery"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
   </div>
   <div class="navrow"><nav class="navbar" aria-label="Main">
-      <a href="#value">Value</a><a href="#pricing">Pricing</a><a href="#accept">What we buy</a><a href="#tools">Calculators</a><a href="#inheritance">Inheritance</a><a href="#rewards">Rewards</a><a href="#faq">FAQs</a>
+      <a href="#pricing">Pricing</a><a href="#accept">What we buy</a><a href="#tools">Calculators</a><a href="#inheritance">Inheritance</a><a href="#rewards">Rewards</a><a href="#faq">FAQs</a>
     </nav></div>
   <div class="sheet" id="sheet" hidden>
     <nav class="wrap" aria-label="Menu">
@@ -679,7 +694,7 @@ footer nav a:hover{color:var(--gold)}
         <div class="row"><span>Gross weight</span><span>6.40 g</span></div>
         <div class="row"><span>Stone weight</span><span>− 0.10 g</span></div>
         <div class="row"><span>Net gold · 22K</span><span>6.30 g</span></div>
-        <div class="row"><span>Rate · 22K</span><span data-rate="g22">₹13,710/g</span></div>
+        <div class="row"><span>Rate · 22K, before GST</span><span data-net="g22">₹13,710/g</span></div>
         <div class="tag-total"><span class="eyebrow">Gold value</span><strong id="tagTotal">₹86,373</strong></div>
         <p class="hint" style="margin-top:8px">Example. The diamond is graded separately in person.</p>
       </div>
@@ -1033,7 +1048,7 @@ footer nav a:hover{color:var(--gold)}
       <div class="head pghead">
         <span class="eyebrow">Today's rates</span>
         <h1>Today's rates, <em>by purity.</em></h1>
-        <p class="lead">Base rates before GST and making charges. These are the rates our payouts start from.</p>
+        <p class="lead">What a jeweller charges for the metal today: international price plus 15% import duty and 3% GST, before making charges. When you sell, no GST applies, so our payouts start from the pre-GST rate.</p>
       </div>
       <div class="tbl-wrap"><table>
         <thead><tr><th>Purity</th><th class="num">Per gram</th><th class="num">Per 10 g</th><th class="num">Per tola</th></tr></thead>
@@ -1198,7 +1213,7 @@ footer nav a:hover{color:var(--gold)}
       <a href="#tools">Calculators</a><a href="#rates">Today's rates</a><a href="#ledger">Heirloom ledger</a><a href="#inheritance">Inheritance</a>
       <a href="#index">Locker Index</a><a href="#rewards">Rewards</a><a href="#faq">FAQs</a><a href="#reimagine">Reimagine</a>
     </nav>
-    <span>© 2026 House of Yuve · Mumbai. Rates are indicative base rates excluding GST and making charges.</span>
+    <span>© 2026 House of Yuve · Mumbai. Rates are indicative and include import duty and GST, excluding making charges.</span>
   </div>
 </footer>
 
@@ -1207,7 +1222,7 @@ footer nav a:hover{color:var(--gold)}
 <script>
 (function(){
   const $ = id => document.getElementById(id);
-  const T=11.6638, O=31.1035;
+  const T=11.6638, O=31.1035, GST=1.03;
   const inr = n => '₹' + Math.round(n).toLocaleString('en-IN');
   const gr = n => (Math.round(n*100)/100).toLocaleString('en-IN',{maximumFractionDigits:2}) + ' g';
 
@@ -1222,23 +1237,25 @@ footer nav a:hover{color:var(--gold)}
     const base = {g:gold, s:silver, p:plat};
     for (const k in RATES) RATES[k].rate = base[k[0]] * RATES[k].p / .999;
     window.YUVE_RATES = RATES;
+    /* Shown prices are what a jeweller charges (incl. GST); payouts and calculators use the pre-GST rate. */
     document.querySelectorAll('[data-rate]').forEach(el => {
       const k = el.dataset.rate;
-      el.textContent = k === 's999kg' ? inr(silver*1000)+'/kg' : k === 'p999' ? inr(plat)+'/g' : inr(RATES[k].rate)+'/g';
+      el.textContent = k === 's999kg' ? inr(silver*GST*1000)+'/kg' : k === 'p999' ? inr(plat*GST)+'/g' : el.dataset.per ? inr(RATES[k].rate*GST*el.dataset.per)+'/'+el.dataset.per+'g' : inr(RATES[k].rate*GST)+'/g';
     });
+    document.querySelectorAll('[data-net]').forEach(el => el.textContent = inr(RATES[el.dataset.net].rate)+'/g');
     const t = $('tagTotal'); if (t) t.textContent = inr(6.30 * RATES.g22.rate);
-    $('rateRows').innerHTML = Object.values(RATES).map(r=>`<tr><td>${r.label}</td><td class="num">${inr(r.rate)}</td><td class="num">${inr(r.rate*10)}</td><td class="num">${inr(r.rate*T)}</td></tr>`).join('');
+    $('rateRows').innerHTML = Object.values(RATES).map(r=>`<tr><td>${r.label}</td><td class="num">${inr(r.rate*GST)}</td><td class="num">${inr(r.rate*GST*10)}</td><td class="num">${inr(r.rate*GST*T)}</td></tr>`).join('');
     tool();
     dispatchEvent(new Event('yuve:rates'));
   }
 
-  /* Live rates: free, keyless APIs. Spot (USD/troy oz) × USD→INR × Indian import duty, before GST. */
-  const OZ = 31.1035, DUTY = 1.06, CACHE = 'yuve-rates-v1', TTL = 10*60*1000;
+  /* Live rates: free, keyless APIs. Spot (USD/troy oz) × USD→INR × Indian import duty; GST added for display. */
+  const OZ = 31.1035, DUTY = 1.15, /* 10% customs + 5% AIDC since 13 May 2026 */ CACHE = 'yuve-rates-v1', TTL = 10*60*1000;
   function showLive(d){
     setBase(d.xau*d.inr/OZ*DUTY, d.xag*d.inr/OZ*DUTY, d.xpt*d.inr/OZ*DUTY);
     const when = new Date(d.at).toLocaleString('en-IN',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
     $('tkWhen').textContent = 'Live · ' + when;
-    $('rateNote').textContent = `Live international spot prices, updated ${when}, converted at ₹${d.inr.toFixed(2)} per US$ and including ${Math.round((DUTY-1)*100)}% import duty. Excludes GST and making charges. Rates move through the day.`;
+    $('rateNote').textContent = `Live international spot prices, updated ${when}, converted at ₹${d.inr.toFixed(2)} per US$ and including ${Math.round((DUTY-1)*100)}% import duty and 3% GST. Excludes making charges. Rates move through the day.`;
   }
   async function loadRates(){
     try { const c = JSON.parse(localStorage.getItem(CACHE)); if (c && Date.now()-c.at < TTL) return showLive(c); } catch(e){}
@@ -1299,7 +1316,7 @@ footer nav a:hover{color:var(--gold)}
   $('cT').addEventListener('input',()=>{const g=(+$('cT').value||0)*T;$('cG').value=g.toFixed(2);$('cO').value=(g/O).toFixed(3);});
   $('cO').addEventListener('input',()=>{const g=(+$('cO').value||0)*O;$('cG').value=g.toFixed(2);$('cT').value=(g/T).toFixed(3);});
 
-  setBase(14957, 250.9, 5163);
+  setBase(14561, 202.2, 5802);
   loadRates();
 
   /* Inheritance */
